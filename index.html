@@ -8,12 +8,16 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    
-    <P class = "bg-danger  text-white rounded p-3">Ajouter tâche : </P>
+    <div id = sec>
+    <section id = "section1">
+      
+        <P class = "bg-primary  text-white rounded p-3" id = "carte">Ajouter tâche : </P>
 
-    <form class="formulaire" id="form-contact">
-        <div class="email">
-            <label for="validationServerUsername" class="form-label">Titre : <br></label>
+    <form class="formulaire" id="form-tache">
+
+     
+        <div class="titre">
+            <label for="validationServerUsername" class="form-label">Titre : </label><br><br>
             <div class="input-group has-validation">
                 <input type="text" class="form-control is-invalid" id="titreInput"
                     aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
@@ -23,7 +27,7 @@
         </div>
 
         <div class="priorité">
-            <label for="validationServer03" class="form-label">Priorité : <br></label>
+            <label for="validationServer03" class="form-label">Priorité : </label><br><br>
 
             <select class="form-select form-select-lg mb-3" id="prioriteSelect" aria-label="Large select example">
                 <option selected>Choisir une priorité</option>
@@ -33,26 +37,24 @@
             </select>
         </div>
 
+        <button class = "btn btn-dark" id ="buttonn" >Ajouter</button><br><br>
         
     </form>
 
-    <a class = "bg-danger text-white rounded p-3 modifier-tâche"href="#">Modifier tâche :</a> </a>
+    <a class = "bg-primary text-white rounded p-3 modifier-tâche"href="modifier.html" id = "carte">Modifier tâche :</a><br><br><br>
 
-    <a class = "bg-danger text-white rounded p-3 Supprimer-tâches"href="#">Supprimer tâche : </a>
+    <a class = "bg-primary text-white rounded p-3 Supprimer-tâches"href="supprimer.html" id = "carte">Supprimer tâche :</a><br><br><br>
 
-<div class="pause">
-            <label for="validationServer02" class="form-label">Pause : <br></label>
-            <input class="form-check-input" type="checkbox" value="5 min" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                5 min 
-            </label>
-        </div>
-        <div class="pause">
-            <input class="form-check-input" type="checkbox" value="15 min" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-               15 min
-            </label>
-        </div>
-   
+    <a class = "bg-primary text-white rounded p-3 Afficher-tâches"href="Afficher.html" id = "carte">Afficher tâche :</a><br><br>
+        
+
+    </section>
+
+    <section id = "section2">
+      <div id = "miniteur">25:00</div>
+    </section>
+    </div>   
+      
+    <script src="script.js"></script>
 </body>
 </html>

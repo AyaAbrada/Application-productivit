@@ -1,0 +1,21 @@
+#section1{
+   width: 25%;
+   height: 100%; 
+   margin: 2%;  
+}
+#section2{
+   width: 75%;
+   height: 100%;
+   margin: 2%;
+}
+#carte{
+   width: 45%;
+}
+#miniteur{
+   color: red;
+   font-size: 500%;
+   width: 500px;      /* Taille du cercle */
+   height: 500px;     /* Taille du cercle */
+   background-color: black;  /* Couleur du cercle */
+   border-radius: 50%; /* Pour donner la forme de cercle */
+}
