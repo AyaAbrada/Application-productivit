@@ -1,13 +1,15 @@
 function text(){
-    if(document.getElementById("titreInput").value == ""){
-        alert("Entrer le titre");  
-    }else(document.getElementById("prioriteSelect").value == ""){
-        alert("Choisir une priorité")
+    if(document.getElementById("titreInput").value == "" ){
+        alert("Entrer le titre");}
     }
-}
+function text2(){        
+    if(document.getElementById("prioriteSelect").value == ""){
+        alert("Choisir une priorité")}
+    }
 
 document.getElementById("buttonn").addEventListener("click", () => {
     text();
+    text2();
 })
 
 document.getElementById("buttonn").addEventListener("click" , function(event){
