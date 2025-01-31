@@ -38,3 +38,38 @@ function AjouterTache(){
      // window.location.href = 'Afficher.html';
 
 }
+
+
+
+
+let time = 25 * 60; // 25 minutes en secondes
+let interval; // Variable pour stocker l'intervalle
+
+// Fonction pour démarrer le timer
+function startTimer() {
+  const timerElement = document.getElementById('timer');
+
+  // Si le timer est déjà en cours, on ne le redémarre pas
+  if (interval) return;
+
+  // Démarrer le compte à rebours
+  interval = setInterval(() => {
+    let minutes = Math.floor(time / 60); // Récupérer les minutes
+    let seconds = time % 60; // Récupérer les secondes restantes
+
+    // Mettre à jour l'affichage du timer avec un format MM:SS
+    timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    // Si le temps est écoulé, on arrête le timer
+    if (time === 0) {
+      clearInterval(interval);
+      interval = null; // Réinitialiser l'intervalle pour pouvoir redémarrer
+      alert('Le temps est écoulé !');
+    } else {
+      time--; // Décrémenter le temps chaque seconde
+    }
+  }, 1000); // Mise à jour chaque seconde
+}
+
+// Ajouter un événement au bouton pour démarrer le timer
+document.getElementById('startButton').addEventListener('click', startTimer);

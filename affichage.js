@@ -11,7 +11,7 @@
         
             // Vérifier s'il y a des tâches et les afficher
             if (taches.length > 0) {
-                taches.forEach(tache => {
+                taches.forEach((tache,index )=> {
                     // Créer un élément HTML pour chaque tâche
                     const tacheDiv = document.createElement('div');
                     tacheDiv.classList.add('tache'); // Ajouter une classe CSS pour styler les tâches (facultatif)
@@ -22,10 +22,14 @@
         
                     const propriete = document.createElement('p');
                     propriete.textContent = `Priorité: ${tache.propriete}`;
-        
+                    tacheDiv.innerHTML = `
+                     <button onclick="deletTask(${index})" class="btn btn-succes">delete</button>
+                    `;
+
                     // Ajouter le titre et la priorité à l'élément de la tâche
                     tacheDiv.appendChild(titre);
                     tacheDiv.appendChild(propriete);
+                    
         
                     // Ajouter la tâche au conteneur des tâches
                     tachesContainer.appendChild(tacheDiv);
@@ -37,7 +41,20 @@
                 tachesContainer.appendChild(message);
             }
         }
+
         
         // Appeler la fonction pour afficher les tâches dès que la page est chargée
         window.onload = AfficherTache;
+
+        //function delete
+function deletTask(index) {
+    let taskList = localStorage.getItem("taches") ? JSON.parse(localStorage.getItem("taches")) : [];
+    if(index >= 0 && index < taskList.length){
+        taskList.splice(index , 1);
+        localStorage.setItem("taches", JSON.stringify(taskList));
+        AfficherTache();
+
+    }
+
+ }
         
